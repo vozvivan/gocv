@@ -1817,6 +1817,26 @@ func LinearPolar(src Mat, dst *Mat, center image.Point, maxRadius float64, flags
 	C.LinearPolar(src.p, dst.p, centerP, C.double(maxRadius), C.int(flags))
 }
 
+// Shape matching methods.
+//
+// For further details, please see:
+// https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html#gaadc90cb16e2362c9bd6e7363e6e4c317
+type ShapeMatchModes int
+
+const (
+	ContoursMatchI1 ShapeMatchModes = 0
+	ContoursMatchI2 ShapeMatchModes = 1
+	ContoursMatchI3 ShapeMatchModes = 2
+)
+
+// Compares two shapes.
+//
+// For further details, please see:
+// https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html#gaadc90cb16e2362c9bd6e7363e6e4c317
+func MatchShapes(contour1 Mat, contour2 Mat, method ShapeMatchModes, parameter float64) float64 {
+	return C.MatchShapes(contour1.p, contour2.p, C.int(method), C.double(parameter))
+}
+
 // DistanceTypes types for Distance Transform and M-estimatorss
 //
 // For further details, please see:
