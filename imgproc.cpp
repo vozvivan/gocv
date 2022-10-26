@@ -608,7 +608,7 @@ void LinearPolar(Mat src, Mat dst, Point center, double maxRadius, int flags) {
 	cv::linearPolar(*src, *dst, centerPt, maxRadius, flags);
 }
 
-double MatchShapes(Mat contour1, Mat contour2, int method, double parameter) {
+double MatchShapes(PointVector contour1, PointVector contour2, int method, double parameter) {
     return cv::matchShapes(contour1, contour2, method, parameter);
 }
 

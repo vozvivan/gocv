@@ -1833,7 +1833,7 @@ const (
 //
 // For further details, please see:
 // https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html#gaadc90cb16e2362c9bd6e7363e6e4c317
-func MatchShapes(contour1 Mat, contour2 Mat, method ShapeMatchModes, parameter float64) float64 {
+func MatchShapes(contour1 PointVector, contour2 PointVector, method ShapeMatchModes, parameter float64) float64 {
 	return C.MatchShapes(contour1.p, contour2.p, C.int(method), C.double(parameter))
 }
 
