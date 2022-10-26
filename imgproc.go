@@ -1824,9 +1824,9 @@ func LinearPolar(src Mat, dst *Mat, center image.Point, maxRadius float64, flags
 type ShapeMatchModes int
 
 const (
-	ContoursMatchI1 ShapeMatchModes = 0
-	ContoursMatchI2 ShapeMatchModes = 1
-	ContoursMatchI3 ShapeMatchModes = 2
+	ContoursMatchI1 ShapeMatchModes = 1
+	ContoursMatchI2 ShapeMatchModes = 2
+	ContoursMatchI3 ShapeMatchModes = 3
 )
 
 // Compares two shapes.
