@@ -1834,7 +1834,7 @@ const (
 // For further details, please see:
 // https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html#gaadc90cb16e2362c9bd6e7363e6e4c317
 func MatchShapes(contour1 PointVector, contour2 PointVector, method ShapeMatchModes, parameter float64) float64 {
-	return C.MatchShapes(contour1.p, contour2.p, C.int(method), C.double(parameter))
+	return float64(C.MatchShapes(contour1.p, contour2.p, C.int(method), C.double(parameter)))
 }
 
 // DistanceTypes types for Distance Transform and M-estimatorss
